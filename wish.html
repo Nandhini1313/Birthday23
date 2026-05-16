@@ -1,0 +1,4227 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+
+    <title>Inbakumar Birthday</title>
+
+    <!-- FONT -->
+
+    <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- GSAP -->
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+
+    <style>
+        /* ================================= */
+        /* SMOOTH SCROLL */
+        /* ================================= */
+
+        html.lenis,
+        html.lenis body{
+            height:auto;
+        }
+
+        .lenis.lenis-smooth{
+            scroll-behavior:auto !important;
+        }
+
+        .lenis.lenis-smooth [data-lenis-prevent]{
+            overscroll-behavior:contain;
+        }
+
+        .lenis.lenis-stopped{
+            overflow:hidden;
+        }
+
+        *{
+            margin:0;
+            padding:0;
+            box-sizing:border-box;
+        }
+
+        body{
+            overflow-x:hidden;
+            font-family:'Poppins',sans-serif;
+            background:#020617;
+        }
+
+        /* ================================= */
+        /* GALAXY BACKGROUND */
+        /* ================================= */
+
+        .galaxy-bg{
+            position:fixed;
+            inset:0;
+
+            background:
+                radial-gradient(circle at top left,#1d4ed8 0%,transparent 30%),
+                radial-gradient(circle at top right,#7c3aed 0%,transparent 25%),
+                radial-gradient(circle at bottom left,#0ea5e9 0%,transparent 30%),
+                radial-gradient(circle at bottom right,#2563eb 0%,transparent 30%),
+                linear-gradient(to bottom,#020617,#081226,#020617);
+
+            overflow:hidden;
+        }
+
+        /* ================================= */
+        /* STARS */
+        /* ================================= */
+
+        .stars{
+            position:absolute;
+            inset:0;
+        }
+
+        .star{
+            position:absolute;
+            background:white;
+            border-radius:50%;
+            animation:twinkle infinite alternate;
+        }
+
+        @keyframes twinkle{
+
+            from{
+                opacity:0.2;
+                transform:scale(1);
+            }
+
+            to{
+                opacity:1;
+                transform:scale(1.8);
+            }
+
+        }
+
+        /* ================================= */
+        /* NEBULA GLOW */
+        /* ================================= */
+
+        .nebula{
+            position:absolute;
+            border-radius:50%;
+            filter:blur(120px);
+            opacity:0.45;
+        }
+
+        .nebula1{
+            width:500px;
+            height:500px;
+            background:#38bdf8;
+            top:-100px;
+            left:-100px;
+            animation:float 10s infinite alternate;
+        }
+
+        .nebula2{
+            width:600px;
+            height:600px;
+            background:#7c3aed;
+            bottom:-150px;
+            right:-150px;
+            animation:float 15s infinite alternate;
+        }
+
+        .nebula3{
+            width:450px;
+            height:450px;
+            background:#0ea5e9;
+            top:40%;
+            left:35%;
+            animation:float 12s infinite alternate;
+        }
+
+        @keyframes float{
+
+            0%{
+                transform:translate(0,0) scale(1);
+            }
+
+            100%{
+                transform:translate(40px,-40px) scale(1.2);
+            }
+
+        }
+
+      /* ================================= */
+/* HERO NEW LAYOUT */
+/* ================================= */
+
+.hero{
+
+position:relative;
+
+width:100%;
+min-height:100vh;
+
+display:flex;
+align-items:center;
+justify-content:space-between;
+
+padding:0 8%;
+
+z-index:5;
+
+gap:60px;
+}
+
+/* ================================= */
+/* LEFT */
+/* ================================= */
+
+.hero-left{
+flex:1;
+}
+
+/* ================================= */
+/* RIGHT */
+/* ================================= */
+
+.hero-right{
+
+flex:1;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+position:relative;
+}
+
+/* ================================= */
+/* IMAGE GLOW */
+/* ================================= */
+
+.image-glow{
+
+position:absolute;
+
+width:500px;
+height:500px;
+
+background:#3b82f6;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:0.35;
+
+animation:float 8s infinite alternate;
+}
+
+/* ================================= */
+/* IMAGE CARD */
+/* ================================= */
+
+.hero-image-card{
+
+position:relative;
+
+width:380px;
+height:520px;
+
+border-radius:40px;
+
+overflow:hidden;
+
+background:
+    rgba(255,255,255,0.08);
+
+backdrop-filter:blur(20px);
+
+border:
+    1px solid rgba(255,255,255,0.15);
+
+box-shadow:
+    0 0 60px rgba(59,130,246,0.35);
+
+transition:0.6s;
+}
+
+.hero-image-card:hover{
+
+transform:
+    translateY(-10px)
+    scale(1.03);
+
+}
+
+/* ================================= */
+/* IMAGE */
+/* ================================= */
+
+.hero-image-card img{
+
+width:100%;
+height:100%;
+
+object-fit:cover;
+}
+
+/* ================================= */
+/* OVERLAY */
+/* ================================= */
+
+.image-overlay{
+
+position:absolute;
+
+inset:0;
+
+background:
+    linear-gradient(
+        to top,
+        rgba(0,0,0,0.85),
+        transparent
+    );
+}
+
+/* ================================= */
+/* IMAGE TEXT */
+/* ================================= */
+
+.image-text{
+
+position:absolute;
+
+bottom:20px;
+left:20px;
+right:20px;
+
+padding:20px;
+
+border-radius:25px;
+
+background:
+    rgba(255,255,255,0.08);
+
+backdrop-filter:blur(15px);
+
+border:
+    1px solid rgba(255,255,255,0.12);
+
+}
+
+.image-text h3{
+
+color:white;
+
+margin-bottom:10px;
+
+font-size:1.4rem;
+}
+
+.image-text p{
+
+color:#dbeafe;
+
+line-height:1.8;
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:900px){
+
+.hero{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding-top:120px;
+}
+
+.hero-right{
+    margin-top:40px;
+}
+
+.hero-image-card{
+
+    width:320px;
+    height:430px;
+}
+
+}
+        /* ================================= */
+        /* SMALL TITLE */
+        /* ================================= */
+
+        .small-title{
+
+            letter-spacing:10px;
+            color:white;
+            font-size:1.2rem;
+
+            margin-bottom:30px;
+
+            text-shadow:
+                0 0 20px rgba(255,255,255,0.7);
+
+        }
+
+        /* ================================= */
+        /* MAIN NAME */
+        /* ================================= */
+
+        .main-name{
+
+            font-family:'Great Vibes',cursive;
+
+            font-size:10rem;
+
+            color:white;
+
+            position:relative;
+
+            text-shadow:
+                0 0 10px #fff,
+                0 0 20px #93c5fd,
+                0 0 40px #60a5fa,
+                0 0 80px #2563eb,
+                0 0 120px #1d4ed8;
+
+            animation:
+                glowPulse 4s infinite alternate,
+                floatingName 5s ease-in-out infinite;
+
+        }
+
+        @keyframes glowPulse{
+
+            from{
+
+                text-shadow:
+                    0 0 10px #fff,
+                    0 0 20px #93c5fd,
+                    0 0 40px #60a5fa,
+                    0 0 80px #2563eb;
+
+            }
+
+            to{
+
+                text-shadow:
+                    0 0 20px #fff,
+                    0 0 40px #bfdbfe,
+                    0 0 80px #60a5fa,
+                    0 0 140px #2563eb;
+
+            }
+
+        }
+
+        @keyframes floatingName{
+
+            0%{
+                transform:translateY(0px);
+            }
+
+            50%{
+                transform:translateY(-15px);
+            }
+
+            100%{
+                transform:translateY(0px);
+            }
+
+        }
+
+        /* ================================= */
+        /* HEART */
+        /* ================================= */
+
+        .heart{
+
+            margin-top:20px;
+            align-items: center;
+
+            font-size:2rem;
+
+            color:#bfdbfe;
+
+            animation:pulse 2s infinite;
+
+        }
+
+        @keyframes pulse{
+
+            0%{
+                transform:scale(1);
+            }
+
+            50%{
+                transform:scale(1);
+            }
+
+            100%{
+                transform:scale(1);
+            }
+
+        }
+
+        /* ================================= */
+        /* MESSAGE */
+        /* ================================= */
+
+        .message{
+
+            margin-top:40px;
+
+            max-width:700px;
+
+            color:#dbeafe;
+
+            font-size:1.3rem;
+
+            line-height:2;
+
+            text-shadow:
+                0 0 10px rgba(255,255,255,0.2);
+
+        }
+
+        /* ================================= */
+        /* BUTTON */
+        /* ================================= */
+
+        .btn{
+
+            margin-top:50px;
+
+            padding:18px 50px;
+
+            border:none;
+
+            border-radius:999px;
+
+            background:
+                linear-gradient(
+                    to right,
+                    #3b82f6,
+                    #60a5fa,
+                    #93c5fd
+                );
+
+            color:white;
+
+            font-size:1rem;
+
+            font-weight:600;
+
+            cursor:pointer;
+
+            box-shadow:
+                0 0 30px rgba(96,165,250,0.5);
+
+            transition:0.5s;
+
+        }
+
+        .btn:hover{
+
+            transform:translateY(-8px) scale(1.05);
+
+            box-shadow:
+                0 0 60px rgba(96,165,250,0.8);
+
+        }
+
+        /* ================================= */
+        /* SHOOTING STARS */
+        /* ================================= */
+
+        .shooting-star{
+
+            position:absolute;
+
+            width:200px;
+            height:2px;
+
+            background:
+                linear-gradient(to right,white,transparent);
+
+            transform:rotate(-35deg);
+
+            opacity:0.8;
+
+            animation:shoot 6s linear infinite;
+
+        }
+
+        .shooting-star:nth-child(1){
+            top:10%;
+            left:70%;
+            animation-delay:0s;
+        }
+
+        .shooting-star:nth-child(2){
+            top:30%;
+            left:80%;
+            animation-delay:2s;
+        }
+
+        .shooting-star:nth-child(3){
+            top:50%;
+            left:60%;
+            animation-delay:4s;
+        }
+
+        @keyframes shoot{
+
+            0%{
+                transform:
+                    translateX(0)
+                    translateY(0)
+                    rotate(-35deg);
+
+                opacity:0;
+            }
+
+            10%{
+                opacity:1;
+            }
+
+            100%{
+                transform:
+                    translateX(-800px)
+                    translateY(400px)
+                    rotate(-35deg);
+
+                opacity:0;
+            }
+
+        }
+
+        /* ================================= */
+        /* MOBILE */
+        /* ================================= */
+
+        @media(max-width:768px){
+
+            .main-name{
+                font-size:5rem;
+            }
+
+            .message{
+                font-size:1rem;
+                line-height:1.8;
+            }
+
+            .small-title{
+                font-size:0.8rem;
+                letter-spacing:4px;
+            }
+
+        }
+        /* ========================================= */
+/* RESPONSIVE SYSTEM */
+/* ========================================= */
+
+/* LARGE LAPTOP */
+
+@media(max-width:1400px){
+
+.main-name{
+    font-size:8rem;
+}
+
+.message{
+    font-size:1.1rem;
+}
+
+}
+
+/* TABLET */
+
+@media(max-width:992px){
+
+body{
+    overflow-x:hidden;
+}
+
+.hero{
+
+    flex-direction:column;
+
+    justify-content:center;
+
+    text-align:center;
+
+    padding:
+        120px 7% 80px;
+
+    gap:70px;
+}
+
+.hero-left{
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+}
+
+.main-name{
+
+    font-size:6rem;
+
+    line-height:1.1;
+}
+
+.message{
+
+    font-size:1.05rem;
+
+    max-width:650px;
+
+    line-height:1.9;
+}
+
+.hero-image-card{
+
+    width:340px;
+    height:460px;
+}
+
+.small-title{
+
+    font-size:1rem;
+
+    letter-spacing:6px;
+}
+
+.btn{
+
+    padding:16px 40px;
+
+    font-size:0.95rem;
+}
+
+}
+
+/* MOBILE */
+
+@media(max-width:768px){
+
+.hero{
+
+    padding:
+        100px 6% 60px;
+}
+
+.main-name{
+
+    font-size:4.5rem;
+
+    letter-spacing:2px;
+}
+
+.small-title{
+
+    font-size:0.8rem;
+
+    letter-spacing:4px;
+
+    margin-bottom:20px;
+}
+
+.heart{
+
+    font-size:1.5rem;
+}
+
+.message{
+
+    margin-top:25px;
+
+    font-size:0.95rem;
+
+    line-height:1.8;
+
+    max-width:100%;
+}
+
+.hero-image-card{
+
+    width:290px;
+    height:390px;
+
+    border-radius:30px;
+}
+
+.image-text{
+
+    padding:16px;
+}
+
+.image-text h3{
+
+    font-size:1.1rem;
+}
+
+.image-text p{
+
+    font-size:0.85rem;
+}
+
+.btn{
+
+    margin-top:35px;
+
+    width:100%;
+
+    max-width:320px;
+
+    padding:15px 30px;
+}
+
+.nebula1,
+.nebula2,
+.nebula3{
+
+    filter:blur(100px);
+
+    opacity:0.35;
+}
+
+}
+
+/* SMALL MOBILE */
+
+@media(max-width:480px){
+
+.main-name{
+
+    font-size:3.5rem;
+}
+
+.message{
+
+    font-size:0.88rem;
+
+    line-height:1.7;
+}
+
+.hero-image-card{
+
+    width:250px;
+    height:350px;
+}
+
+.small-title{
+
+    font-size:0.7rem;
+
+    letter-spacing:3px;
+}
+
+.btn{
+
+    font-size:0.85rem;
+
+    padding:14px 26px;
+}
+
+}
+
+/* ================================= */
+/* CAKE SECTION */
+/* ================================= */
+
+.cake-section{
+
+position:relative;
+
+min-height:100vh;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+justify-content:center;
+
+padding:120px 20px;
+
+text-align:center;
+
+z-index:5;
+}
+
+/* ================================= */
+/* TITLE */
+/* ================================= */
+
+.cake-title span{
+
+color:#bfdbfe;
+
+letter-spacing:8px;
+
+font-size:0.9rem;
+
+text-transform:uppercase;
+
+text-shadow:
+    0 0 15px rgba(255,255,255,0.5);
+
+}
+
+.cake-title h2{
+
+margin-top:20px;
+
+font-family:'Great Vibes',cursive;
+
+font-size:5rem;
+
+color:white;
+
+text-shadow:
+    0 0 20px #93c5fd,
+    0 0 40px #60a5fa,
+    0 0 80px #2563eb;
+
+}
+
+/* ================================= */
+/* CAKE AREA */
+/* ================================= */
+
+.cake-area{
+
+position:relative;
+
+margin-top:80px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+/* ================================= */
+/* GLOW */
+/* ================================= */
+
+.cake-glow{
+
+position:absolute;
+
+width:400px;
+height:400px;
+
+border-radius:50%;
+
+background:#3b82f6;
+
+filter:blur(120px);
+
+opacity:0.35;
+}
+
+/* ================================= */
+/* CAKE CONTAINER */
+/* ================================= */
+
+.cake-container{
+
+position:relative;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* ================================= */
+/* CANDLE */
+/* ================================= */
+
+.candle-area{
+
+position:relative;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+
+z-index:10;
+}
+
+.candle{
+
+width:20px;
+height:90px;
+
+border-radius:10px;
+
+background:
+    linear-gradient(
+        to bottom,
+        #ffffff,
+        #bfdbfe
+    );
+
+box-shadow:
+    0 0 20px rgba(255,255,255,0.8);
+}
+
+/* ================================= */
+/* FLAME */
+/* ================================= */
+
+.flame{
+
+width:35px;
+height:60px;
+
+background:
+    radial-gradient(
+        circle,
+        #fef08a,
+        #f59e0b,
+        transparent
+    );
+
+border-radius:50% 50% 40% 40%;
+
+margin-bottom:-10px;
+
+animation:
+    flameMove 0.8s infinite alternate;
+
+box-shadow:
+    0 0 30px #fbbf24,
+    0 0 60px #f59e0b;
+}
+
+@keyframes flameMove{
+
+from{
+    transform:
+        scale(1)
+        rotate(-2deg);
+}
+
+to{
+    transform:
+        scale(1.08)
+        rotate(2deg);
+}
+
+}
+
+/* ================================= */
+/* SMOKE */
+/* ================================= */
+
+.smoke{
+
+position:absolute;
+
+width:25px;
+height:25px;
+
+border-radius:50%;
+
+background:
+    rgba(255,255,255,0.4);
+
+filter:blur(10px);
+
+opacity:0;
+
+top:-30px;
+}
+
+/* ================================= */
+/* CAKE */
+/* ================================= */
+
+.cake{
+
+margin-top:-5px;
+
+display:flex;
+flex-direction:column;
+align-items:center;
+}
+
+/* ================================= */
+/* CAKE LAYERS */
+/* ================================= */
+
+.cake-top{
+
+width:180px;
+height:60px;
+
+border-radius:20px;
+
+background:
+    linear-gradient(
+        to right,
+        #dbeafe,
+        #93c5fd
+    );
+
+box-shadow:
+    0 0 30px rgba(147,197,253,0.4);
+}
+
+.cake-middle{
+
+width:240px;
+height:70px;
+
+margin-top:-10px;
+
+border-radius:20px;
+
+background:
+    linear-gradient(
+        to right,
+        #60a5fa,
+        #3b82f6
+    );
+}
+
+.cake-bottom{
+
+width:300px;
+height:80px;
+
+margin-top:-10px;
+
+border-radius:20px;
+
+background:
+    linear-gradient(
+        to right,
+        #1d4ed8,
+        #2563eb
+    );
+
+box-shadow:
+    0 0 40px rgba(59,130,246,0.5);
+}
+
+/* ================================= */
+/* BUTTON */
+/* ================================= */
+
+.blow-btn{
+
+margin-top:70px;
+
+padding:18px 45px;
+
+border:none;
+
+border-radius:999px;
+
+background:
+    linear-gradient(
+        to right,
+        #2563eb,
+        #60a5fa
+    );
+
+color:white;
+
+font-size:1rem;
+
+font-weight:600;
+
+cursor:pointer;
+
+box-shadow:
+    0 0 40px rgba(96,165,250,0.4);
+
+transition:0.5s;
+}
+
+.blow-btn:hover{
+
+transform:
+    translateY(-8px)
+    scale(1.05);
+
+}
+
+/* ================================= */
+/* HIDDEN MESSAGE */
+/* ================================= */
+
+/* ================================= */
+/* HIDDEN MESSAGE */
+/* ================================= */
+
+.hidden-message{
+
+    width:100%;
+
+    max-width:700px;
+
+    height:0;
+
+    opacity:0;
+
+    overflow:hidden;
+
+    padding:0;
+
+    margin-top:0;
+
+    border-radius:40px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+        1px solid transparent;
+
+    transform:
+        translateY(50px);
+
+    transition:
+        all 1s ease;
+
+}
+
+/* ================================= */
+/* SHOW */
+/* ================================= */
+
+.hidden-message.show{
+
+    height:auto;
+
+    opacity:1;
+
+    padding:50px;
+
+    margin-top:70px;
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    transform:
+        translateY(0);
+
+}
+
+.hidden-message h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:4rem;
+
+color:white;
+
+margin-bottom:25px;
+}
+
+.hidden-message p{
+
+color:#dbeafe;
+
+line-height:2;
+
+font-size:1.1rem;
+}
+
+.message-stars{
+
+margin-top:25px;
+
+font-size:2rem;
+}
+
+/* ================================= */
+/* HIDDEN LETTER */
+/* ================================= */
+
+.hidden-letter{
+
+max-width:850px;
+
+margin:auto;
+
+max-height:0;
+
+overflow:hidden;
+
+opacity:0;
+
+padding:0 50px;
+
+margin-top:0;
+
+border-radius:45px;
+
+background:
+    rgba(255,255,255,0.08);
+
+backdrop-filter:blur(25px);
+
+border:
+    1px solid rgba(255,255,255,0.12);
+
+box-shadow:
+    0 0 60px rgba(96,165,250,0.12);
+
+transform:
+    translateY(80px)
+    scale(0.96);
+
+transition:
+    all 1.5s ease;
+
+}
+
+/* ================================= */
+/* SHOW */
+/* ================================= */
+
+.hidden-letter.show{
+
+max-height:1200px;
+
+opacity:1;
+
+padding:70px 50px;
+
+margin-top:80px;
+
+transform:
+    translateY(0)
+    scale(1);
+
+}
+/* ================================= */
+/* LETTER GLOW */
+/* ================================= */
+
+.hidden-letter::before{
+
+content:'';
+
+position:absolute;
+
+width:350px;
+height:350px;
+
+background:#3b82f6;
+
+border-radius:50%;
+
+filter:blur(120px);
+
+opacity:0.15;
+
+top:-100px;
+right:-100px;
+
+}
+/* ================================= */
+/* LETTER TITLE */
+/* ================================= */
+
+.hidden-letter h2{
+
+font-family:'Great Vibes',cursive;
+
+font-size:5rem;
+
+color:white;
+
+margin-bottom:40px;
+
+text-shadow:
+    0 0 20px #93c5fd,
+    0 0 40px #60a5fa;
+
+position:relative;
+
+z-index:2;
+}
+
+/* ================================= */
+/* LETTER TEXT */
+/* ================================= */
+
+.hidden-letter p{
+
+color:#e0f2fe;
+
+line-height:2.3;
+
+font-size:1.08rem;
+
+position:relative;
+
+z-index:2;
+}
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+.hidden-letter{
+
+    padding:0 20px;
+}
+
+.hidden-letter.show{
+
+    padding:40px 22px;
+}
+
+.hidden-letter h2{
+
+    font-size:3rem;
+}
+
+.hidden-letter p{
+
+    font-size:0.96rem;
+
+    line-height:2;
+}
+
+}
+/* ================================= */
+/* ABOUT SECTION */
+/* ================================= */
+
+.about-section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding:
+        140px 8%;
+
+    z-index:5;
+}
+
+/* ================================= */
+/* TITLE */
+/* ================================= */
+
+.about-title{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.about-title span{
+
+    color:#bfdbfe;
+
+    letter-spacing:7px;
+
+    font-size:0.9rem;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+.about-title h2{
+
+    margin-top:20px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5rem;
+
+    color:white;
+
+    text-shadow:
+        0 0 20px #93c5fd,
+        0 0 40px #60a5fa,
+        0 0 80px #2563eb;
+}
+
+.about-title p{
+
+    margin-top:30px;
+
+    color:#dbeafe;
+
+    font-size:1.1rem;
+
+    line-height:2;
+}
+
+/* ================================= */
+/* CARDS */
+/* ================================= */
+
+.about-cards{
+
+    margin-top:90px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+}
+
+/* ================================= */
+/* CARD */
+/* ================================= */
+
+.about-card{
+
+    position:relative;
+
+    padding:45px 35px;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    transition:0.6s;
+
+    cursor:pointer;
+}
+
+/* ================================= */
+/* CARD HOVER */
+/* ================================= */
+
+.about-card:hover{
+
+    transform:
+        translateY(-12px)
+        scale(1.03);
+
+    box-shadow:
+        0 0 40px rgba(96,165,250,0.3);
+
+}
+
+/* ================================= */
+/* CARD GLOW */
+/* ================================= */
+
+.card-glow{
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    background:#3b82f6;
+
+    border-radius:50%;
+
+    filter:blur(80px);
+
+    opacity:0.15;
+
+    top:-40px;
+    right:-40px;
+}
+
+/* ================================= */
+/* ICON */
+/* ================================= */
+
+.card-icon{
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+}
+
+/* ================================= */
+/* CARD TITLE */
+/* ================================= */
+
+.about-card h3{
+
+    color:white;
+
+    font-size:1.5rem;
+
+    margin-bottom:18px;
+}
+
+/* ================================= */
+/* CARD TEXT */
+/* ================================= */
+
+.about-card p{
+
+    color:#dbeafe;
+
+    line-height:1.9;
+
+    font-size:0.98rem;
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+    .about-section{
+
+        padding:
+            90px 6%;
+    }
+
+    .about-title h2{
+
+        font-size:3.5rem;
+    }
+
+    .about-title p{
+
+        font-size:0.95rem;
+
+        line-height:1.8;
+    }
+
+    .about-cards{
+
+        margin-top:60px;
+
+        gap:25px;
+    }
+
+    .about-card{
+
+        padding:35px 25px;
+    }
+
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+.cake-title h2{
+
+    font-size:3.5rem;
+}
+
+.hidden-message{
+
+    padding:35px 25px;
+}
+
+.hidden-message h2{
+
+    font-size:2.8rem;
+}
+
+.hidden-message p{
+
+    font-size:0.95rem;
+}
+
+.cake-bottom{
+
+    width:240px;
+}
+
+.cake-middle{
+
+    width:190px;
+}
+
+.cake-top{
+
+    width:140px;
+}
+
+}
+
+/* ================================= */
+/* JOURNEY SECTION */
+/* ================================= */
+
+.journey-section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding:
+        140px 8%;
+
+    z-index:5;
+}
+
+/* ================================= */
+/* TITLE */
+/* ================================= */
+
+.journey-title{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.journey-title span{
+
+    color:#bfdbfe;
+
+    letter-spacing:7px;
+
+    font-size:0.9rem;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+.journey-title h2{
+
+    margin-top:20px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5rem;
+
+    color:white;
+
+    text-shadow:
+        0 0 20px #93c5fd,
+        0 0 40px #60a5fa,
+        0 0 80px #2563eb;
+}
+
+.journey-title p{
+
+    margin-top:30px;
+
+    color:#dbeafe;
+
+    line-height:2;
+
+    font-size:1.1rem;
+}
+
+/* ================================= */
+/* TIMELINE */
+/* ================================= */
+
+.timeline{
+
+    position:relative;
+
+    margin-top:100px;
+
+    max-width:950px;
+
+    margin-inline:auto;
+
+    display:flex;
+    flex-direction:column;
+
+    gap:70px;
+}
+
+/* ================================= */
+/* LINE */
+/* ================================= */
+
+.timeline-line{
+
+    position:absolute;
+
+    left:50%;
+
+    top:0;
+    bottom:0;
+
+    width:4px;
+
+    transform:translateX(-50%);
+
+    background:
+        linear-gradient(
+            to bottom,
+            transparent,
+            #60a5fa,
+            #93c5fd,
+            transparent
+        );
+
+    box-shadow:
+        0 0 20px #60a5fa;
+}
+
+/* ================================= */
+/* ITEM */
+/* ================================= */
+
+.timeline-item{
+
+    position:relative;
+
+    width:100%;
+
+    display:flex;
+    justify-content:flex-start;
+}
+
+/* ================================= */
+/* ALTERNATE */
+/* ================================= */
+
+.timeline-item:nth-child(even){
+
+    justify-content:flex-end;
+}
+
+/* ================================= */
+/* DOT */
+/* ================================= */
+
+.timeline-dot{
+
+    position:absolute;
+
+    left:50%;
+    top:50%;
+
+    width:24px;
+    height:24px;
+
+    border-radius:50%;
+
+    transform:
+        translate(-50%,-50%);
+
+    background:#93c5fd;
+
+    box-shadow:
+        0 0 20px #60a5fa,
+        0 0 40px #2563eb;
+
+    z-index:5;
+}
+
+/* ================================= */
+/* CARD */
+/* ================================= */
+
+.timeline-card{
+
+    width:42%;
+
+    padding:35px;
+
+    border-radius:35px;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    transition:0.6s;
+
+    position:relative;
+
+    overflow:hidden;
+}
+
+/* ================================= */
+/* CARD HOVER */
+/* ================================= */
+
+.timeline-card:hover{
+
+    transform:
+        translateY(-10px)
+        scale(1.02);
+
+    box-shadow:
+        0 0 40px rgba(96,165,250,0.3);
+
+}
+
+/* ================================= */
+/* CARD GLOW */
+/* ================================= */
+
+.timeline-card::before{
+
+    content:'';
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:#3b82f6;
+
+    filter:blur(90px);
+
+    opacity:0.15;
+
+    top:-50px;
+    right:-50px;
+}
+
+/* ================================= */
+/* CARD TEXT */
+/* ================================= */
+
+.timeline-card span{
+
+    color:#bfdbfe;
+
+    font-size:0.8rem;
+
+    letter-spacing:5px;
+}
+
+.timeline-card h3{
+
+    margin-top:18px;
+
+    color:white;
+
+    font-size:1.7rem;
+}
+
+.timeline-card p{
+
+    margin-top:20px;
+
+    color:#dbeafe;
+
+    line-height:1.9;
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+    .journey-section{
+
+        padding:
+            90px 6%;
+    }
+
+    .journey-title h2{
+
+        font-size:3.5rem;
+    }
+
+    .journey-title p{
+
+        font-size:0.95rem;
+    }
+
+    .timeline{
+
+        gap:40px;
+
+        margin-top:70px;
+    }
+
+    .timeline-line{
+
+        left:15px;
+    }
+
+    .timeline-item,
+    .timeline-item:nth-child(even){
+
+        justify-content:flex-start;
+    }
+
+    .timeline-dot{
+
+        left:15px;
+    }
+
+    .timeline-card{
+
+        width:100%;
+
+        margin-left:45px;
+
+        padding:28px 22px;
+    }
+
+    .timeline-card h3{
+
+        font-size:1.3rem;
+    }
+
+}
+
+/* ================================= */
+/* DREAMS SECTION */
+/* ================================= */
+
+.dreams-section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding:
+        140px 8%;
+
+    z-index:5;
+
+    overflow:hidden;
+}
+
+/* ================================= */
+/* TITLE */
+/* ================================= */
+
+.dreams-title{
+
+    text-align:center;
+
+    max-width:850px;
+
+    margin:auto;
+}
+
+.dreams-title span{
+
+    color:#bfdbfe;
+
+    letter-spacing:7px;
+
+    font-size:0.9rem;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+.dreams-title h2{
+
+    margin-top:20px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5rem;
+
+    color:white;
+
+    text-shadow:
+        0 0 20px #93c5fd,
+        0 0 40px #60a5fa,
+        0 0 80px #2563eb;
+}
+
+.dreams-title p{
+
+    margin-top:30px;
+
+    color:#dbeafe;
+
+    line-height:2;
+
+    font-size:1.1rem;
+}
+
+/* ================================= */
+/* GRID */
+/* ================================= */
+
+.dreams-grid{
+
+    margin-top:90px;
+
+    display:grid;
+
+    grid-template-columns:
+        repeat(auto-fit,minmax(260px,1fr));
+
+    gap:35px;
+}
+
+/* ================================= */
+/* CARD */
+/* ================================= */
+
+.dream-card{
+
+    position:relative;
+
+    padding:45px 35px;
+
+    border-radius:35px;
+
+    overflow:hidden;
+
+    background:
+        rgba(255,255,255,0.08);
+
+    backdrop-filter:blur(20px);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+    transition:0.6s;
+
+    animation:
+        floatingCard 5s ease-in-out infinite;
+
+}
+
+/* ================================= */
+/* FLOAT */
+/* ================================= */
+
+@keyframes floatingCard{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-12px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ================================= */
+/* HOVER */
+/* ================================= */
+
+.dream-card:hover{
+
+    transform:
+        translateY(-15px)
+        scale(1.03);
+
+    box-shadow:
+        0 0 50px rgba(96,165,250,0.35);
+
+}
+
+/* ================================= */
+/* GLOW */
+/* ================================= */
+
+.dream-glow{
+
+    position:absolute;
+
+    width:180px;
+    height:180px;
+
+    border-radius:50%;
+
+    background:#3b82f6;
+
+    filter:blur(90px);
+
+    opacity:0.15;
+
+    top:-50px;
+    right:-50px;
+}
+
+/* ================================= */
+/* ICON */
+/* ================================= */
+
+.dream-icon{
+
+    font-size:3rem;
+
+    margin-bottom:25px;
+}
+
+/* ================================= */
+/* TEXT */
+/* ================================= */
+
+.dream-card h3{
+
+    color:white;
+
+    font-size:1.5rem;
+
+    margin-bottom:18px;
+}
+
+.dream-card p{
+
+    color:#dbeafe;
+
+    line-height:1.9;
+
+    font-size:0.98rem;
+}
+
+/* ================================= */
+/* FLOATING STARS */
+/* ================================= */
+
+.floating-stars{
+
+    margin-top:80px;
+
+    text-align:center;
+
+    font-size:2rem;
+
+    color:#bfdbfe;
+
+    letter-spacing:20px;
+
+    animation:
+        starsFloat 5s ease-in-out infinite;
+
+}
+
+@keyframes starsFloat{
+
+    0%{
+        transform:translateY(0px);
+    }
+
+    50%{
+        transform:translateY(-10px);
+    }
+
+    100%{
+        transform:translateY(0px);
+    }
+
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+    .dreams-section{
+
+        padding:
+            90px 6%;
+    }
+
+    .dreams-title h2{
+
+        font-size:3.5rem;
+    }
+
+    .dreams-title p{
+
+        font-size:0.95rem;
+    }
+
+    .dreams-grid{
+
+        margin-top:60px;
+
+        gap:25px;
+    }
+
+    .dream-card{
+
+        padding:35px 25px;
+    }
+
+    .floating-stars{
+
+        font-size:1.4rem;
+
+        letter-spacing:10px;
+    }
+
+}
+
+/* ================================= */
+/* FINAL SECTION */
+/* ================================= */
+
+.final-section{
+
+position:relative;
+
+min-height:100vh;
+
+padding:
+    140px 8%;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+text-align:center;
+
+overflow:hidden;
+}
+
+/* ================================= */
+/* FINAL CONTENT */
+/* ================================= */
+
+.final-content{
+
+max-width:900px;
+
+position:relative;
+
+z-index:2;
+}
+
+/* ================================= */
+/* SMALL TEXT */
+/* ================================= */
+
+.final-content span{
+
+color:#bfdbfe;
+
+letter-spacing:7px;
+
+font-size:0.9rem;
+
+text-transform:uppercase;
+
+text-shadow:
+    0 0 20px rgba(255,255,255,0.3);
+}
+
+/* ================================= */
+/* TITLE */
+/* ================================= */
+
+.final-content h2{
+
+margin-top:25px;
+
+font-family:'Great Vibes',cursive;
+
+font-size:6rem;
+
+color:white;
+
+line-height:1.2;
+
+text-shadow:
+    0 0 20px #93c5fd,
+    0 0 40px #60a5fa,
+    0 0 90px #2563eb;
+
+animation:
+    glowText 4s ease-in-out infinite;
+}
+
+/* ================================= */
+/* GLOW */
+/* ================================= */
+
+@keyframes glowText{
+
+0%{
+
+    text-shadow:
+        0 0 20px #93c5fd,
+        0 0 40px #60a5fa;
+
+}
+
+50%{
+
+    text-shadow:
+        0 0 35px #bfdbfe,
+        0 0 70px #60a5fa,
+        0 0 120px #2563eb;
+
+}
+
+100%{
+
+    text-shadow:
+        0 0 20px #93c5fd,
+        0 0 40px #60a5fa;
+
+}
+
+}
+
+/* ================================= */
+/* PARAGRAPH */
+/* ================================= */
+
+.final-content p{
+
+margin-top:50px;
+
+color:#e0f2fe;
+
+line-height:2.5;
+
+font-size:1.12rem;
+
+background:
+    rgba(255,255,255,0.05);
+
+border:
+    1px solid rgba(255,255,255,0.1);
+
+backdrop-filter:blur(20px);
+
+padding:60px;
+
+border-radius:40px;
+
+box-shadow:
+    0 0 50px rgba(96,165,250,0.15);
+
+}
+
+/* ================================= */
+/* FINAL LINE */
+/* ================================= */
+
+.final-line{
+
+margin-top:50px;
+
+font-family:'Great Vibes',cursive;
+
+font-size:3rem;
+
+color:#bfdbfe;
+
+text-shadow:
+    0 0 20px rgba(255,255,255,0.4);
+
+animation:
+    floatingEnd 5s ease-in-out infinite;
+
+}
+
+/* ================================= */
+/* FLOAT */
+/* ================================= */
+
+@keyframes floatingEnd{
+
+0%{
+    transform:translateY(0px);
+}
+
+50%{
+    transform:translateY(-10px);
+}
+
+100%{
+    transform:translateY(0px);
+}
+
+}
+
+/* ================================= */
+/* STARS */
+/* ================================= */
+
+.final-stars{
+
+position:absolute;
+
+inset:0;
+
+background:
+    radial-gradient(
+        circle at center,
+        rgba(96,165,250,0.15),
+        transparent 70%
+    );
+
+animation:
+    starsPulse 6s ease-in-out infinite;
+
+}
+
+@keyframes starsPulse{
+
+0%{
+    opacity:0.5;
+}
+
+50%{
+    opacity:1;
+}
+
+100%{
+    opacity:0.5;
+}
+
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+.final-section{
+
+    padding:
+        100px 6%;
+}
+
+.final-content h2{
+
+    font-size:3.5rem;
+}
+
+.final-content p{
+
+    padding:35px 22px;
+
+    font-size:0.96rem;
+
+    line-height:2.1;
+}
+
+.final-line{
+
+    font-size:2.2rem;
+}
+
+}
+
+/* ================================= */
+/* SECRET SECTION */
+/* ================================= */
+
+.secret-section{
+
+    position:relative;
+
+    min-height:100vh;
+
+    padding:
+        140px 8%;
+
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    justify-content:center;
+
+    text-align:center;
+
+    z-index:5;
+
+    overflow:hidden;
+}
+
+/* ================================= */
+/* INTRO */
+/* ================================= */
+
+.secret-intro{
+
+    max-width:800px;
+}
+
+.secret-intro span{
+
+    color:#bfdbfe;
+
+    letter-spacing:7px;
+
+    font-size:0.9rem;
+
+    text-transform:uppercase;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.4);
+}
+
+.secret-intro h2{
+
+    margin-top:20px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5rem;
+
+    color:white;
+
+    text-shadow:
+        0 0 20px #93c5fd,
+        0 0 40px #60a5fa,
+        0 0 80px #2563eb;
+}
+
+.secret-intro p{
+
+    margin-top:30px;
+
+    color:#dbeafe;
+
+    line-height:2;
+
+    font-size:1.1rem;
+}
+
+/* ================================= */
+/* BUTTON */
+/* ================================= */
+
+.secret-btn{
+
+    margin-top:50px;
+
+    padding:20px 50px;
+
+    border:none;
+
+    border-radius:999px;
+
+    background:
+        linear-gradient(
+            to right,
+            #2563eb,
+            #60a5fa
+        );
+
+    color:white;
+
+    font-size:1rem;
+
+    font-weight:600;
+
+    cursor:pointer;
+
+    transition:0.5s;
+
+    box-shadow:
+        0 0 40px rgba(96,165,250,0.4);
+
+}
+
+.secret-btn:hover{
+
+    transform:
+        translateY(-8px)
+        scale(1.05);
+
+}
+
+/* ================================= */
+/* LETTER CONTAINER */
+/* ================================= */
+
+.letter-container{
+
+width:100%;
+
+max-width:850px;
+
+height:0;
+
+overflow:hidden;
+
+opacity:0;
+
+transition:
+    opacity 1s ease,
+    margin-top 1s ease;
+
+margin-top:0;
+
+}
+
+/* ================================= */
+/* SHOW */
+/* ================================= */
+
+.letter-container.show{
+
+height:auto;
+
+opacity:1;
+
+margin-top:80px;
+
+}
+
+/* ================================= */
+/* LETTER GLOW */
+/* ================================= */
+
+.letter-glow{
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#3b82f6;
+
+    border-radius:50%;
+
+    filter:blur(150px);
+
+    opacity:0.2;
+
+    left:50%;
+
+    transform:translateX(-50%);
+}
+
+/* ================================= */
+/* LETTER CARD */
+/* ================================= */
+
+.letter-card{
+
+position:relative;
+
+padding:70px;
+
+border-radius:45px;
+
+background:
+    rgba(255,255,255,0.08);
+
+backdrop-filter:blur(25px);
+
+border:
+    1px solid rgba(255,255,255,0.12);
+
+overflow:hidden;
+
+box-shadow:
+    0 0 50px rgba(96,165,250,0.2);
+
+}
+
+/* ================================= */
+/* LETTER STARS */
+/* ================================= */
+
+.letter-stars{
+
+    font-size:2rem;
+
+    margin-bottom:25px;
+}
+
+/* ================================= */
+/* LETTER TITLE */
+/* ================================= */
+
+.letter-card h2{
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:5rem;
+
+    color:white;
+
+    margin-bottom:40px;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.4);
+
+}
+
+/* ================================= */
+/* LETTER TEXT */
+/* ================================= */
+
+.letter-card p{
+
+    color:#e0f2fe;
+
+    line-height:2.3;
+
+    font-size:1.1rem;
+
+    text-align:left;
+}
+
+/* ================================= */
+/* LETTER END */
+/* ================================= */
+
+.letter-end{
+
+    margin-top:50px;
+
+    font-family:'Great Vibes',cursive;
+
+    font-size:3rem;
+
+    color:#bfdbfe;
+
+    text-shadow:
+        0 0 20px rgba(255,255,255,0.4);
+
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+    .secret-section{
+
+        padding:
+            90px 6%;
+    }
+
+    .secret-intro h2{
+
+        font-size:3.5rem;
+    }
+
+    .secret-intro p{
+
+        font-size:0.95rem;
+    }
+
+    .letter-card{
+
+        padding:40px 25px;
+    }
+
+    .letter-card h2{
+
+        font-size:3rem;
+    }
+
+    .letter-card p{
+
+        font-size:0.95rem;
+
+        line-height:2;
+    }
+
+    .letter-end{
+
+        font-size:2.2rem;
+    }
+
+}
+
+/* ================================= */
+/* FINAL ATMOSPHERE */
+/* ================================= */
+
+.secret-section::before{
+
+    content:'';
+
+    position:absolute;
+
+    inset:0;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(96,165,250,0.12),
+            transparent 70%
+        );
+
+    pointer-events:none;
+}
+
+/* ================================= */
+/* ENVELOPE */
+/* ================================= */
+
+/* ================================= */
+/* ENVELOPE */
+/* ================================= */
+
+.envelope{
+
+position:relative;
+
+width:100%;
+
+max-width:750px;
+
+margin:auto;
+
+height:700px;
+
+display:flex;
+justify-content:center;
+align-items:center;
+
+}
+
+/* ================================= */
+/* ENVELOPE BODY */
+/* ================================= */
+
+.envelope-body{
+
+    position:absolute;
+
+    width:100%;
+    height:320px;
+
+    bottom:0;
+
+    border-radius:25px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.08),
+            rgba(255,255,255,0.12)
+        );
+
+    backdrop-filter:blur(25px);
+
+    border:
+        1px solid rgba(255,255,255,0.15);
+
+    z-index:2;
+
+    box-shadow:
+        0 0 40px rgba(96,165,250,0.25);
+
+}
+
+/* ================================= */
+/* ENVELOPE TOP */
+/* ================================= */
+
+.envelope-top{
+
+    position:absolute;
+
+    top:70px;
+
+    width:100%;
+    height:180px;
+
+    background:
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.12),
+            rgba(255,255,255,0.08)
+        );
+
+    clip-path:
+        polygon(0 0,50% 100%,100% 0);
+
+    z-index:5;
+
+    transform-origin:top;
+
+    transition:1.5s ease;
+
+    backdrop-filter:blur(25px);
+
+    border:
+        1px solid rgba(255,255,255,0.12);
+
+}
+
+/* ================================= */
+/* LETTER PAPER */
+/* ================================= */
+
+/* ================================= */
+/* LETTER PAPER */
+/* ================================= */
+
+.letter-paper{
+
+position:absolute;
+
+width:90%;
+
+padding:60px;
+
+border-radius:35px;
+
+background:
+    rgba(10,20,50,0.92);
+
+backdrop-filter:blur(20px);
+
+border:
+    1px solid rgba(255,255,255,0.12);
+
+z-index:1;
+
+opacity:0;
+
+transform:
+    translateY(120px)
+    scale(0.9);
+
+transition:
+    1.5s ease;
+
+box-shadow:
+    0 0 50px rgba(96,165,250,0.25);
+
+}
+
+/* ================================= */
+/* OPEN EFFECT */
+/* ================================= */
+
+.letter-container.show .envelope-top{
+
+    transform:
+        rotateX(180deg);
+
+}
+
+/* ================================= */
+/* LETTER OPEN */
+/* ================================= */
+
+.letter-container.show .letter-paper{
+
+opacity:1;
+
+transform:
+    translateY(-180px)
+    scale(1);
+
+z-index:10;
+
+}
+
+/* ================================= */
+/* MOBILE */
+/* ================================= */
+
+@media(max-width:768px){
+
+    .envelope{
+
+        height:420px;
+    }
+
+    .envelope-body{
+
+        height:260px;
+    }
+
+    .letter-paper{
+
+        padding:35px 20px;
+    }
+
+    .letter-container.show .letter-paper{
+
+        transform:
+            translateY(-80px)
+            scale(1);
+
+    }
+
+}
+
+    </style>
+
+</head>
+
+<body>
+
+    <!-- ================================= -->
+    <!-- GALAXY -->
+    <!-- ================================= -->
+
+    <div class="galaxy-bg">
+
+        <div class="stars"></div>
+
+        <div class="nebula nebula1"></div>
+        <div class="nebula nebula2"></div>
+        <div class="nebula nebula3"></div>
+
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+        <div class="shooting-star"></div>
+
+    </div>
+
+    <!-- ================================= -->
+    <!-- HERO -->
+    <!-- ================================= -->
+
+    <section class="hero" id="home">
+
+        <!-- LEFT CONTENT -->
+    
+        <div class="hero-left">
+    
+            <div class="small-title">
+                HAPPY 23rd BIRTHDAY
+            </div>
+    
+            <h1 class="main-name">
+                Inbakumar
+            </h1>
+    
+            <!-- <div class="heart">
+                💙
+            </div> -->
+    
+            <p class="message">
+
+                Papss, This is the first birthday we’re celebrating together with Love, 
+                that makes this day even more special and felt personal to my heart❤️<br>
+                May your 23rd year become the beginning of the most beautiful chapter of your life — filled with Love, care, happiness,endless smile,
+                Success, growth, good Health & Wealth and unforgettable memories. I love You Pattuuu ma🥰
+    
+            </p>
+    
+            <!-- <button class="btn" id="beginBtn">
+                Begin The Journey ✨
+            </button> -->
+    
+        </div>
+    
+        <!-- RIGHT IMAGE -->
+    
+        <div class="hero-right">
+    
+            <div class="image-glow"></div>
+    
+            <div class="hero-image-card">
+    
+                <img src="img/Inbaa.jpg">
+    
+                <!-- <div class="image-overlay"></div>
+    
+                <div class="image-text">
+    
+                    <h3>
+                        Mine ✨
+                    </h3>
+    
+                    <p>
+                        The universe shines brighter today.
+                    </p>
+    
+                </div> -->
+    
+            </div>
+    
+        </div>
+    
+    </section>
+
+<!-- ================================= -->
+<!-- CAKE SECTION -->
+<!-- ================================= -->
+
+<section class="cake-section" id="cake-section">
+
+    <!-- TITLE -->
+
+    <div class="cake-title">
+
+        <span>
+            Make A Wish ✨
+        </span>
+
+        <h2>
+            Patttu ma, First make a cute wish… and then blow the candle papsss ✨🎂
+        </h2>
+
+    </div>
+
+    <!-- CAKE AREA -->
+
+    <div class="cake-area">
+
+        <!-- GLOW -->
+
+        <div class="cake-glow"></div>
+
+        <!-- CAKE -->
+
+        <div class="cake-container">
+
+            <!-- CANDLE -->
+
+            <div class="candle-area">
+
+                <div class="flame" id="flame"></div>
+
+                <div class="candle"></div>
+
+                <div class="smoke" id="smoke"></div>
+
+            </div>
+
+            <!-- CAKE -->
+
+            <div class="cake">
+
+                <div class="cake-top"></div>
+
+                <div class="cake-middle"></div>
+
+                <div class="cake-bottom"></div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- BUTTON -->
+
+    <button class="blow-btn" onclick="blowCandle()">
+
+        Blow Candle ✨
+
+    </button>
+
+    <!-- HIDDEN MESSAGE -->
+
+    <div class="hidden-message" id="hiddenMessage">
+
+        <h2>
+            Happy Birthday Inbaa ma 💙
+        </h2>
+
+        <p>
+            Hope you had a wish papsss, indha special day la naan unga kooda illa nu konjam kashtama dhaan iruku Pattuu ma 
+            but its okay I was there with you today by heart❤️ <br>
+            Enaku inaike unga b'day start aaiduchu Pattuu...ungaluku innum nalaiku dhaan aagum
+            adhuvum okay dhaan papsss… namma rendu days celebrate pannalam 💙
+            Inaiku naan un kooda irundha nalla irukum Pattuu ma🥹 <br>
+            Un pakkathula ninnu cake cut pannitu, candle light la unga smile paathutu irnthurupan
+            I'm missing every cute moments papss🫂🫂🫂
+            But evolo thoorathula irunthalum en Heart una suthi dha irukum thangame, Im always With You Inba ma🥰🫂 <br>
+            I wanna wish you this year gives you everything beautiful — Love, happiness, peace, success, good health, 
+            and lots of reasons to smile every single day pattuuu, Nee siricha avolo Azhagha iruka da thango🙈😍🫂
+
+        </p>
+
+        <div class="message-stars">
+            ✨ 💙 ✨
+        </div>
+
+    </div>
+
+</section>
+
+<!-- ================================= -->
+<!-- ABOUT INBA -->
+<!-- ================================= -->
+
+<section class="about-section" id="about">
+
+    <!-- SECTION TITLE -->
+
+    <div class="about-title">
+
+        <span>
+            YOU MAKES LIFE BEAUTIFUL ✨
+        </span>
+
+        <h2>
+            Inbaaaa 💙
+        </h2>
+
+        <p>
+
+            Papsss, you came into my life and become
+            the reason behind smiles, happiness,
+            comfort and unforgettable memories.
+
+        </p>
+
+    </div>
+
+    <!-- CARDS -->
+
+    <div class="about-cards">
+
+        
+        <!-- CARD -->
+
+        <div class="about-card">
+
+            <div class="card-glow"></div>
+
+            <div class="card-icon">
+                ❤️
+            </div>
+
+            <h3>
+                Heart❤️
+            </h3>
+
+            <p>
+                Pattuuu ma🫂 You are really such a Gem with pure heart papsss😻 
+                You are so Kind, Soft, Cool, Handles every single thing with Care and Love😘🥰 <br>
+                The way you understand and Stand with me in every situation, 
+                support me, and cares for me... feels like Im so Blessed to have you in my life Thangame🥰💕 <br>
+                Elame enaku romba pudikum thangame🙈❤️
+            </p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="about-card">
+
+            <div class="card-glow"></div>
+
+            <div class="card-icon">
+                🥰
+            </div>
+
+            <h3>
+                 Smile🥰
+            </h3>
+
+            <p>
+                Your smile is one of the most beautiful things I have ever seen🫣❤️
+                No matter how stressful the day gets, your smile brings me happiness, peace and comfort. 
+                Avolodha antha siripa paaka ena venaah pannalam Pattuuu ma <br>
+                Seriouly Im Addicted to ur Smile papsss🫣😻🫂
+                I wish I'm the reasons to smile like this forever 💙
+            </p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="about-card">
+
+            <div class="card-glow"></div>
+
+            <div class="card-icon">
+                🫂
+            </div>
+
+            <h3>
+                With You
+            </h3>
+
+            <p>
+                Your presence is enough to me Thangame🥰💕'
+                daily unoda Energy enaku kudupa papss🫂🫂🫂 Im lucky to have you Pattuuu ma nu🥰❤️
+                Unkuda irunthale oru manasu amaithiyaa papsss🥰🫴🏻❤️Ena apdiye batharama paathukura thangame🙈❤️
+                Even a small conversation makes me feel happy💃💕
+                I love You pattuuu ma❤️✨️
+            </p>
+
+        </div>
+
+        <!-- CARD -->
+
+        <div class="about-card">
+
+            <div class="card-glow"></div>
+
+            <div class="card-icon">
+                ✨
+            </div>
+
+            <h3>
+                Dream
+            </h3>
+
+            <p>
+                I know you have a beautiful dreams for future🫂 
+                and I believe, you will achieve everything ur heart desires😘❤️
+                You deserve success, happiness, peace, and all the blessings this World Papsss🥰
+                I’ll always pray for your happiness, growth, and a future filled with everything you deserve 🥰🫂✨
+
+            </p>
+
+        </div>
+
+        
+    </div>
+
+</section>
+
+<!-- ================================= -->
+<!-- OUR JOURNEY -->
+<!-- ================================= -->
+
+<section class="journey-section" id="journey">
+
+    <!-- TITLE -->
+
+    <div class="journey-title">
+
+        <span>
+            EVERY MEMORY MATTERS ✨
+        </span>
+
+        <h2>
+         ❤️
+        </h2>
+
+        <p>
+            This journey continues and shine brighter & Stronger🫂❤️
+
+        </p>
+
+    </div>
+
+    <!-- TIMELINE -->
+
+    <div class="timeline">
+
+        <!-- LINE -->
+
+        <div class="timeline-line"></div>
+
+        <!-- ITEM 1 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <span>
+                    OUR FIRST MEET UP
+                </span>
+
+                <h3>
+                    Our Journey 🌙
+                </h3>
+
+                <p>
+                    The 11 months Journey of togetherness❤️
+                    Its all began with a simple Insta request on 14th June 2025 at 12:45 AM🙈💕
+                    A tiny notification… but little did I know, it would become one of the most beautiful moments of my life.
+
+                   
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 2 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <p>
+                    15th June, 2025 at 2:38 PM, I accepted your request and replied to you🥰
+                    Maybe its like an ordinary conversation at first… Then, it slowly became the beginning of our Love life💕 
+                    You came into my world so unexpectedly,but Now You are my peace✨, my safe place🫂, my dream🤗, my happiness🥰, and my forever 🤍
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 1 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <span>
+                    Where Everything Started ✨ Vellore Fort ❤️
+                </span>
+
+                <p>
+                    January 4th, 2026 at Ambur RS✨🫣
+                    A day I wont forget for the rest of my life🫂
+                    Its our proposal day🙈 <br>
+
+                   
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ITEM 2 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <p>
+                    Meeting you in real for the first time felt so magical🫣 nijamave ipo ninaicha kuda namba mudila da thango🙈😍🫂
+                    anaike elame Azhagha irunthuchu papss, even namba itha evolo pesunalum sema feel pattu ma🙈💕
+                    The moment, When I saw you, came towards you then you gave a cute smile and handshake🙈… my heart honestly melted🫣🫂
+                    
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 1 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <span>
+                    Ummahhhhh😘❤️
+                </span>
+
+                <p>
+                    Really, You are so cute and handsome that day… actually not just that day, but every single day ❤️ Nee azhagu kutty da Thangame🥰💕
+                    And your voice in real sathiyama ketathum flat aaitan papsss… Life long ketute iruka poren❤️❤️❤️ 
+                    I love you Inbaa🤍
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- ITEM 2 -->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <span>
+                    Our Future Dreams
+                </span>
+
+                <h3>
+                    Love & Laughs & Endless Talks 💙
+                </h3>
+
+                <p>
+                    There are still so many beautiful memories left to create together🫂💕 saved list elam recrate Pannanum pattuuu❤️✨️
+                    I want to be with you without distance, travel to beautiful places(Paris🫣💃), take countless cute pictures🥰 
+                    To go late night drives and create a life full of love and peace together. 
+                    
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <!-- ITEM  1-->
+
+        <div class="timeline-item">
+
+            <div class="timeline-dot"></div>
+
+            <div class="timeline-card">
+
+                <p>
+                    Innum niraiyaa iruku papss, Life ethu vara pogutho athu vara polaam Inba ma🥰🤗🫂
+                    No matter how hard life gets, I hope we always choose each other with the same love, care and understanding❤️✨️ Naan tha niraiyaa sanda poturukan eventhough you handle me with soft with care❤️
+                    Oru time kuda nee yenna vitutu Ponnathu ila pattuu ma, In future too I with the same pattuuu🥰
+
+                </p>
+
+            </div>
+
+        </div>
+
+
+    </div>
+
+</section>
+
+    <!-- FLOATING STARS -->
+
+    <div class="floating-stars">
+
+        ✨ ✦ ✨ ✦ ✨
+
+    </div>
+
+</section>
+
+<!-- ================================= -->
+<!-- FINAL SECTION -->
+<!-- ================================= -->
+
+<section class="final-section">
+
+    <!-- STARS -->
+
+    <div class="final-stars"></div>
+
+    <!-- CONTENT -->
+
+    <div class="final-content">
+
+        <span>
+            MY LOVE ✨
+        </span>
+
+        <h2>
+            Happy Birthday Inbakumar 💙
+        </h2>
+
+        <p>
+
+            <span>
+                Dear Inba❤️✨
+            </span>
+            
+            <br><br>
+
+            Hiii pattuuu ma🫣❤️ en life la oruthar ku Love letter write pannuvan nu expect pannala papsss, 
+            ipo pesa start pandra apo enaku ipdi dhan feel aaguthuu, 
+            feels something more emotional at once🥹🫂 
+            Happy aah iruku at the same time I'm missing you more everyday nd every single time🫂
+            ipo vara Oru time aachum VC paathu dhan balance panikuren but that's okay papsss🥰🫴🏻❤️ 
+            Even in 13k miles apart your presence with me always ❤️ I love youu pattuuu ❤️🫂ummahh 😘🥰🫂 
+
+            <br><br>
+
+            Today is not just a day it's so spl for me that's ur b'day pattuuu ma🥰🫂🫴🏻
+            it's ur 1st bday we are celebrating together as a couple, 
+            that made this day even more spl thangame 😍❤️ 
+
+            <br><br>
+
+            I miss you Inba ma ❤️🫂 bday apo unkuda irukanum pola iruku papsss, 
+            but I stay here with lots of love in youu pattuuu🥰, 
+            I always pray for ur good Health, keep you safe everytime and 
+            bless you with lot's of love, Joy, happiness, peace, and surrounded by good ppl🤗❤️
+
+            <br><br>
+
+            I don't know, How to write a letter in correct manner papss, 
+            enaku thonurathu elam soluren thango🫣❤️ adjust karo🥰🫂
+
+            <br><br>
+
+            Namba love pandrathu enaku dreams world la iruka maari irukum pattuuu❤️✨️ 
+            ithu oru new feel epdi solurathune therila pattuuu🫂 
+            unakaga naan wait pandrathum... enakaga nee wait pandrathum... a
+            prm namba ore time la meet pandra apo sema happy ah irukum papss🥰✨️🫂
+            daily poga manase ila ma povan, aprm thukam vanthurum🥹🫂
+
+            <br><br>
+
+            It's all started in a small convo, but now you are my world my Love❤️🥰
+            Day by day, Message by Message, Call by Call... 
+            our bond becomes more stronger filled with love❤️, care❤️, time❤️, 
+            affection❤️, possess❤️, cute fights❤️, consoles❤️ 
+            You are more important to me pattuuu ma🫂❤️✨
+
+            <br><br>
+
+            From the moment!!! you walked into my life, everything started to change in a beautiful way❤️🥰
+            there is person who always care for me, waiting to see me, 
+            to have a little convo with me🙈❤️ same here too papss❤️✨️ You means a lot to me pattuu ma❤️🫴🏻
+            I never imagined our conversation becomes my comfort zone, safe place, peace and happiness... 
+            I'm so happy to be with you pattuu ma❤️🫂and call you as Mine, 
+            Actually I feels so Proud to call you as Mine❤️😍✨️ I'm Yours thangame 🙈❤️✨
+
+            <br><br>
+
+            The day we met papss❤️ one of the best day In my life, 
+            antha one day la therichuthu papss en future unkuda Happy ah irukum nu🥰❤️
+            pattuuu ma antha proposal ah expect pannala papsss 🫣 
+            I remember every scenario in that day is so Lovely papsss 🙈❤️✨
+
+            <br><br>
+
+            Nerula paatha antha feel ku words ae ila papss❤️ sema azhaga iruntha thangame,
+            😘❤️ yeah you are always handsome 😍🫂 paathute irukalaam pola irunthuchu pattuu ma, 
+            actually paathute dhan irunthan🫣🏃🏻‍♀️ paatha Ore look la en heart beat elam fast aaiduchu antha magic elam unala mattum dhan panna mudiyum papss❤️🫂✨️  
+            apo paatha antha cute smile la flat aanathu dhan papsss, 
+            daily..daily love athigam aaguthe thangame ❤️🫂
+
+            <br><br>
+
+            Daily call la voice ketutu nerula voice kekumbothu, that moment my heart skipped a beat 
+            for a while and started a race🫣❤️ but you control my heart❤️🫂✨️
+            anaiku elame nalla irunthuchu papsss, Train travel🫂Bus Travel 🫂 namba pesunathu🥰 
+            spend panna time ❤️ everything feels so magical😍🧿✨
+
+            <br><br>
+
+            Ithe Happiness lifelong venum Inba ma🫴🏻❤️ enkudave iru thango 🫂✨️ 
+            Naan una batharama paathukuren Chettuu😘❤️
+
+            <br><br>
+
+            I LOVE YOU INBA ❤️
+
+            <br><br>
+
+            I pray that, this year of your life gives you endless happiness, peaceful days nd nights , success, good health, 
+            beautiful memories, and countless reasons to smile every single day🫂❤️
+
+            <br><br>
+
+            Pattuu ma, You are really so kind, genuine, caring, loving, funny, soft, beautiful inside and out, ummahh 😘❤️
+
+            <br><br>
+
+            There are still so many beautiful memories nd moments waiting for us in the future 🫂❤️ 
+            papsss I dream about traveling together🫂, going on late night drives with you😍, 
+            watching movies together😘✨️, laughing at silly things🥰, taking random pictures🙈✨️ 
+            trying new foods🤗 celebrating birthdays together without distance🥹🫂❤️, 
+            and to build a peaceful life filled with love❤️✨
+
+            <br><br>
+
+            I want us to support each other through every phase of our Life, Wanna Smile together, 
+            let's have a fight, says sorry, let's understand each other even during the hard days🫂❤️✨️🥰
+
+            <br><br>
+
+            And Years may pass, Time may fly, Life may change, even Everything becomes Quiet but Our Love won't change that's constant ❤️✨️ 
+            I still wanna rest my head on your lap and feels the same love, peace, comfort forever nd ever🥰🧿✨
+
+            <br><br>
+
+            Thanks for this Wonderful new journey pattuuu ma, you are the meaning of my life papss❤️🥰 no distance, no time, no situation, 
+            no one can change a feeling of Love, care, place in my heart🫂🫴🏻❤️ 
+
+            <br><br>
+
+            No matter where life take us, I'll travel with you nd walk with you forever nd ever, Happy birthday my Love🥰❤️🫂
+
+            <br><br>
+
+            I love you Inba ma ❤️❤️❤️
+
+        </p>
+
+        <div class="final-line">
+
+            Beginning of Beautiful Memories✨️
+
+        </div>
+
+    </div>
+
+</section>
+
+    <!-- ================================= -->
+    <!-- JAVASCRIPT -->
+    <!-- ================================= -->
+
+    <script>
+
+        /* ================================= */
+        /* ALWAYS START FROM TOP */
+        /* ================================= */
+
+        window.onbeforeunload = function () {
+
+            window.scrollTo(0, 0);
+
+        };
+
+        window.addEventListener("load", () => {
+
+            setTimeout(() => {
+
+                window.scrollTo(0, 0);
+
+            }, 10);
+
+        });
+
+        /* ================================= */
+        /* CREATE STARS */
+        /* ================================= */
+
+        const starsContainer = document.querySelector(".stars");
+
+        for(let i=0;i<250;i++){
+
+            const star = document.createElement("div");
+
+            star.classList.add("star");
+
+            const size = Math.random()*3;
+
+            star.style.width = size + "px";
+            star.style.height = size + "px";
+
+            star.style.top = Math.random()*100 + "%";
+            star.style.left = Math.random()*100 + "%";
+
+            star.style.animationDuration =
+                (Math.random()*4+2) + "s";
+
+            starsContainer.appendChild(star);
+
+        }
+
+        /* ================================= */
+        /* GSAP INTRO */
+        /* ================================= */
+
+        gsap.from(".small-title",{
+
+            y:40,
+            opacity:0,
+            duration:1.2
+
+        });
+
+        gsap.from(".main-name",{
+
+            scale:0.5,
+            opacity:0,
+            duration:2,
+            ease:"power4.out"
+
+        });
+
+        gsap.from(".message",{
+
+            y:50,
+            opacity:0,
+            duration:1.5,
+            delay:0.5
+
+        });
+
+        gsap.from(".btn",{
+
+            y:40,
+            opacity:0,
+            duration:1.2,
+            delay:1
+
+        });
+
+       /* ================================= */
+/* LENIS SMOOTH SCROLL */
+/* ================================= */
+
+const lenis = new Lenis({
+
+    duration:1.8,
+
+    smoothWheel:true,
+
+    smoothTouch:true,
+
+    touchMultiplier:2,
+
+    infinite:false
+
+});
+
+function raf(time){
+
+    lenis.raf(time);
+
+    requestAnimationFrame(raf);
+
+}
+
+requestAnimationFrame(raf);
+
+/* ================================= */
+/* RAF FIX */
+/* ================================= */
+
+gsap.ticker.add((time)=>{
+
+    lenis.raf(time * 1000);
+
+});
+
+gsap.ticker.lagSmoothing(0);
+
+/* ================================= */
+/* BLOW CANDLE */
+/* ================================= */
+
+function blowCandle(){
+
+    const flame =
+        document.getElementById("flame");
+
+    const smoke =
+        document.getElementById("smoke");
+
+    const hiddenMessage =
+        document.getElementById("hiddenMessage");
+
+    /* FLAME OFF */
+
+    flame.style.opacity = "0";
+
+    /* SMOKE */
+
+    smoke.style.opacity = "1";
+
+    gsap.to(smoke,{
+
+        y:-80,
+        opacity:0,
+        duration:2
+
+    });
+
+    /* CONFETTI */
+
+    createConfetti();
+
+    /* SHOW MESSAGE */
+
+    setTimeout(()=>{
+
+        hiddenMessage.classList.add("show");
+
+        /* AUTO SCROLL */
+
+        lenis.scrollTo(hiddenMessage,{
+
+            offset:-100,
+
+            duration:2
+
+        });
+
+    },1200);
+
+}
+
+/* ================================= */
+/* BUTTON CLICK */
+/* ================================= */
+
+document
+.getElementById("beginBtn")
+.addEventListener("click",()=>{
+
+    scrollToSection("cake-section");
+
+});
+
+/* ================================= */
+/* CONFETTI */
+/* ================================= */
+
+function createConfetti(){
+
+for(let i=0;i<120;i++){
+
+    const confetti =
+        document.createElement("div");
+
+    confetti.style.position = "fixed";
+
+    confetti.style.width = "8px";
+    confetti.style.height = "8px";
+
+    confetti.style.background =
+        `hsl(${Math.random()*360},100%,70%)`;
+
+    confetti.style.left =
+        Math.random()*100 + "vw";
+
+    confetti.style.top = "-10px";
+
+    confetti.style.zIndex = "9999";
+
+    confetti.style.borderRadius = "50%";
+
+    document.body.appendChild(confetti);
+
+    gsap.to(confetti,{
+
+        y:window.innerHeight + 100,
+
+        x:(Math.random()-0.5)*300,
+
+        rotation:720,
+
+        duration:3 + Math.random()*2,
+
+        ease:"power2.out",
+
+        onComplete:()=>{
+
+            confetti.remove();
+
+        }
+
+    });
+
+}
+
+}
+
+/* ================================= */
+/* SMOOTH SECTION SCROLL */
+/* ================================= */
+
+function scrollToSection(id){
+
+    const target =
+        document.getElementById(id);
+
+    if(target){
+
+        lenis.scrollTo(target,{
+
+            offset:-20,
+
+            duration:2
+
+        });
+
+    }
+
+}
+
+/* ================================= */
+/* ABOUT SECTION ANIMATION */
+/* ================================= */
+
+gsap.from(".about-title",{
+
+    scrollTrigger:{
+
+        trigger:".about-title",
+
+        start:"top 80%"
+
+    },
+
+    y:80,
+
+    opacity:0,
+
+    duration:1.4
+
+});
+
+gsap.from(".about-card",{
+
+    scrollTrigger:{
+
+        trigger:".about-cards",
+
+        start:"top 80%"
+
+    },
+
+    y:100,
+
+    opacity:0,
+
+    duration:1.2,
+
+    stagger:0.2
+
+});
+
+/* ================================= */
+/* JOURNEY ANIMATION */
+/* ================================= */
+
+gsap.from(".timeline-item",{
+
+    scrollTrigger:{
+
+        trigger:".timeline",
+
+        start:"top 80%"
+
+    },
+
+    y:100,
+
+    opacity:0,
+
+    duration:1.3,
+
+    stagger:0.25
+
+});
+
+/* ================================= */
+/* SECRET LETTER */
+/* ================================= */
+
+function openLetter(){
+
+const letter =
+    document.getElementById("hiddenLetter");
+
+/* SHOW */
+
+letter.classList.add("show");
+
+/* AUTO SCROLL */
+
+setTimeout(()=>{
+
+    lenis.scrollTo(letter,{
+
+        offset:-70,
+
+        duration:2.5
+
+    });
+
+},400);
+
+/* GSAP FADE */
+
+gsap.fromTo(letter,
+
+    {
+
+        opacity:0,
+        y:100,
+        scale:0.95
+
+    },
+
+    {
+
+        opacity:1,
+        y:0,
+        scale:1,
+
+        duration:1.8,
+
+        ease:"power3.out"
+
+    }
+
+);
+
+}
+
+/* ================================= */
+/* FINAL SECTION ANIMATION */
+/* ================================= */
+
+gsap.from(".final-content",{
+
+scrollTrigger:{
+
+    trigger:".final-section",
+
+    start:"top 75%"
+
+},
+
+y:120,
+
+opacity:0,
+
+duration:2,
+
+ease:"power3.out"
+
+});
+
+</script>
+
+<script>
+
+    /* ================================= */
+    /* OPEN SECRET LETTER */
+    /* ================================= */
+    
+    function openSecretLetter(){
+    
+        const letter =
+            document.getElementById("hiddenLetter");
+    
+        letter.classList.add("show");
+    
+        /* AUTO SCROLL */
+    
+        window.scrollBy({
+    
+            top:300,
+    
+            behavior:"smooth"
+    
+        });
+    
+    }
+    
+    </script>
+
+</body>
+</html>
